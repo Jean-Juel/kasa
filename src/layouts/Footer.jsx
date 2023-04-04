@@ -25,6 +25,10 @@ const FooterText = styled.p`
   color: white;
   font-size: 24px;
   font-weight: 500;
+  text-align: center;
+  @media (max-width: 800px) {
+    font-size: 18px;
+  }
 `
 export default function Footer() {
     return (

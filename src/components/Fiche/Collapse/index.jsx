@@ -5,7 +5,7 @@ import {FaAngleDown, FaAngleUp} from 'react-icons/fa'
 const CollapseSection = styled.section`
   max-width: 1240px;
   width: 100%;
-  margin: 0 auto 40px;
+  margin: 0 auto 170px;
 `
 const CollapseWrapper = styled.div`
   display: flex;
@@ -13,13 +13,19 @@ const CollapseWrapper = styled.div`
   justify-content: space-between;
   gap: 50px;
   width: 100%;
+  @media (max-width: 800px) {
+    flex-wrap: wrap;
+  }
 `
 const CollapseContainerContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `
 const CollapseContent = styled.div`
   display: flex;
@@ -75,7 +81,6 @@ export const CollapseArrowUp = styled(FaAngleUp)`
   cursor: pointer;
   font-size: 30px;
 `
-
 
 export default function FicheCollapse({fiche}) {
     const [visibleDescr, setVisibleDescr] = useState(false)
