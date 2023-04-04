@@ -13,6 +13,13 @@ const BannerText = styled.h1`
   line-height: 68.45px;
   white-space: nowrap;
   margin: 0;
+  text-align: center;
+  width: 80%;
+  @media (max-width: 900px) {
+    font-size: calc(1vw + 2vh + 1vmin);
+    white-space: normal;
+    line-height: 39px;
+  }
 `
 
 export default function Hero() {

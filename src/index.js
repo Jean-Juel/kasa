@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './index.css';
 import ReactDOM from "react-dom/client";
-import {Outlet} from "react-router-dom"
+import {Outlet, useLocation, useParams} from "react-router-dom"
 import {
     createBrowserRouter,
     RouterProvider,
@@ -12,6 +12,8 @@ import Propos from './Routes/Propos'
 import Error from './Routes/Error'
 import Header from '../src/layouts/Header'
 import Footer from '../src/layouts/Footer'
+import {cardData} from "./utils/api";
+import Fiche from "./Routes/Fiche";
 
 function Layout() {
     return (
@@ -37,15 +39,17 @@ const router = createBrowserRouter([
                 path: '/propos',
                 element: <Propos />
             },
+            {
+                path: `/fiche/:${cardData.id}`,
+                element: <Fiche />
+            },
         ]
     },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+
     <React.StrictMode>
-        <RouterProvider router={router}>
-
-
-        </RouterProvider>
+        <RouterProvider router={router}></RouterProvider>
     </React.StrictMode>
 );
