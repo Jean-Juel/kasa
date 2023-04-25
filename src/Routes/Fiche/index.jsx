@@ -15,23 +15,22 @@ export default function Fiche() {
     const location = useLocation().pathname
     let ficheId = location.slice(7)
 
-    useEffect(()=> {
+    useEffect(() => {
         setParams(ficheId)
     }, [ficheId])
 
     for (let fiche of cardData) {
-        if (ficheId === fiche.id ) {
-    return(
-        <>
-            <Main>
-                <FicheHero params={params} fiche={fiche}/>
-                <FicheDescription fiche={fiche}/>
-                <FicheCollapse fiche={fiche}/>
-            </Main>
-        </>
-    )
-        }
-        else {
+        if (ficheId === fiche.id) {
+            return (
+                <>
+                    <Main>
+                        <FicheHero params={params} fiche={fiche}/>
+                        <FicheDescription fiche={fiche}/>
+                        <FicheCollapse fiche={fiche}/>
+                    </Main>
+                </>
+            )
+        } else {
             console.log('err')
         }
     }

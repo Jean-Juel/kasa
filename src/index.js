@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './index.css';
 import ReactDOM from "react-dom/client";
-import {Outlet, useLocation, useParams} from "react-router-dom"
+import {Outlet, useLocation, useParams, useRouteError} from "react-router-dom"
 import {
     createBrowserRouter,
     RouterProvider,
@@ -24,31 +24,39 @@ function Layout() {
         </>
     );
 }
+function ErrorBoundary() {
+    let error = useRouteError();
+    console.error(error);
+    // Uncaught ReferenceError: path is not defined
+    return <Error />;
+}
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout/>,
-        errorElement: <Error />,
+        errorElement: <ErrorBoundary />,
         children:[
             {
                 path: '/',
-                element: <Root />
+                element: <Root />,
+                errorElement: <ErrorBoundary />,
             },
             {
                 path: '/propos',
-                element: <Propos />
+                element: <Propos />,
+                errorElement: <ErrorBoundary />,
             },
             {
                 path: `/fiche/:${cardData.id}`,
-                element: <Fiche />
+                element: <Fiche />,
+                errorElement: <ErrorBoundary />
             },
         ]
     },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-
     <React.StrictMode>
         <RouterProvider router={router}></RouterProvider>
     </React.StrictMode>

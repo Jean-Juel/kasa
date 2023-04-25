@@ -25,3 +25,10 @@ a,p,li,h1 {
   font-weight: 500;
   color: var(--color-red);
 }
+
+a {
+  text-decoration: none;
+}
+.active {
+  text-decoration: underline var(--color-red);
+}

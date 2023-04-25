@@ -72,13 +72,14 @@ const FicheDescriptionProfil = styled.div`
   gap: 24px;
   @media (max-width: 800px) {
     gap: 10px;
-    width: 100%;
+    width: 50%;
     justify-content: flex-end;
   }
 `
 const FicheDescriptionName = styled.p`
   white-space: pre-wrap;
   font-size: 18px;
+    width: 33%;
   @media (max-width: 400px) {
     margin-right: -15px;
   }
@@ -107,24 +108,24 @@ const FicheDescriptionStar = styled.div`
     justify-content: flex-start;
   }
 `
-const FicheDescriptionTest = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-`
+
 const FicheStarEmpty = styled(FaRegStar)`
   overflow: hidden;
   position: relative;
   z-index: 10;
-  width: 100%;
+  width: 35px;
+  @media (max-width: 800px) {
+    width: 20px;
+  }
 `
 const FicheStarFull = styled(FaStar)`
   overflow: hidden;
   position: relative;
   z-index: 10;
-  width: 100%;
+  width: 35px;
+  @media (max-width: 800px) {
+    width: 20px;
+  }
 `
 
 const FicheDescriptionStarBackground = styled.div`
@@ -142,10 +143,6 @@ export default function FicheDescription({fiche}) {
     const starTotal = 5
     const starPercentage = (rating / starTotal) * 100;
     const starPercentageRounded = parseInt(`${(Math.round(starPercentage / 10) * 10)}%`);
-
-    const ratingArray = [
-
-    ]
 
     let starArray = [...Array(5)].map((star, index) => {
         index += 1
@@ -179,11 +176,6 @@ export default function FicheDescription({fiche}) {
                     </FicheDescriptionProfil>
                     <FicheDescriptionStar>
                         {starArray}
-                        {/*<FicheStarEmpty className="star"/>*/}
-                        {/*<FicheStarEmpty className="star"/>*/}
-                        {/*<FicheStarEmpty className="star"/>*/}
-                        {/*<FicheStarEmpty className="star"/>*/}
-                        {/*<FicheStarFull className="star"/>*/}
                         <FicheDescriptionStarBackground style={{width: `${starPercentageRounded}%`}}/>
                     </FicheDescriptionStar>
                 </FicheDescriptionRating>

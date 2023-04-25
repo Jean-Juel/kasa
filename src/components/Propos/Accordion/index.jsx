@@ -28,7 +28,6 @@ const AccordionTitle = styled.h2`
 
 export default function ProposCollapse({title, text}) {
     const [active, setActive] = useState(false)
-
         return (
             <AccordionItem onClick={() => setActive(!active)}>
                 <AccordionTitleContent>

@@ -20,6 +20,7 @@ const FicheHeroWrapper = styled.div`
   justify-content: center;
   align-items: center;
   scroll-behavior: smooth;
+  transition: all .5s ease-in-out;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -40,6 +41,7 @@ const FicheArrowBannerLeft = styled(FaAngleLeft)`
   z-index: 5;
   fill: white;
   transform: translateY(-50%);
+  transition: all .5s ease-in-out;
 `
 const FicheArrowBannerRight = styled(FaAngleRight)`
   font-size: 60px;
@@ -57,24 +59,31 @@ const HeroBlur = styled.div`
   width: 100%;
   height: 100%;
   background: black;
-  opacity: .2;
   border-radius: 25px;
+  opacity: 0;
+  transition: opacity 200ms;
+  transition-duration: 200ms;
+  transition-property: forward;
 `
 
 export default function FicheHero({fiche}) {
     let [currentIndex, setCurrentIndex] = useState(0)
+    let blur =  document.querySelector('.blur')
 
     const pictures = fiche.pictures
 
     function prevSlide() {
         const isFirstSLide = currentIndex === 0;
         const newIndex = isFirstSLide ? pictures.length - 1 : currentIndex - 1
+        blur.classList.opacity = '1'
         setCurrentIndex(newIndex)
     }
 
     function nextSlide() {
         const isLqstSLide = currentIndex === pictures.length - 1;
         const newIndex = isLqstSLide ? 0 : currentIndex + 1
+        // document.querySelector('.blur').style.opacity = "1"
+        // blur.classList.opacity = '0'
         setCurrentIndex(newIndex)
     }
 
@@ -84,6 +93,7 @@ export default function FicheHero({fiche}) {
             <FicheHeroWrapper id="slider">
                 <FicheArrowBannerLeft onClick={prevSlide}/>
                 <FicheHeroBanner src={fiche.pictures[currentIndex]} alt={fiche.title}/>
+                <HeroBlur className={"blur"}/>
                 <FicheArrowBannerRight onClick={nextSlide}/>
             </FicheHeroWrapper>
         </FicheHeroContainer>
