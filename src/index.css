@@ -1,16 +1,6 @@
 :root {
   --color-red: #FF6060;
   --bg-grey: #F7F7F7;
-  /*BREAKPOINT*/
-  --lg-screen: 390px;
-  /*$screen-xlg-min: 1920px;*/
-  /*$screen-lg-max: $screen-xlg-min - 1px;*/
-  /*$screen-lg-min: 1200px;*/
-  /*$screen-md-max: $screen-lg-min - 1px;*/
-  /*$screen-md-min: 992px;*/
-  /*$screen-sm-max: $screen-md-min - 1px;*/
-  /*$screen-sm-min: 768px;*/
-  /*$screen-xs-max: $screen-sm-min - 1px;*/
 }
 
 body {

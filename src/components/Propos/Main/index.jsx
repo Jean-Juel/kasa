@@ -1,8 +1,5 @@
-import {useState} from "react";
 import styled from "styled-components";
-import {FaAngleDown, FaAngleUp} from 'react-icons/fa'
-import {CollapseArrowDown, CollapseArrowUp, CollapseTextContainerHide, CollapseTextHide} from '../../Fiche/Collapse'
-import ProposCollapse from "../Accordion";
+import Collapse from "../../Collapse";
 
 const AccordionText = [
     {
@@ -28,7 +25,7 @@ const AccordionMain = styled.main`
   width: 100%;
   margin: 0 auto 271px;
   @media (max-width: 800px) {
-  margin: 0 auto 100px;
+    margin: 0 auto 100px;
   }
 `
 const AccordionContainer = styled.div`
@@ -41,17 +38,14 @@ const AccordionContainer = styled.div`
 `
 
 export default function Accordion() {
-
-    let ItemPropos = AccordionText.map(({title, text}) => {
-        return(
-            <ProposCollapse title={title} text={text} />
-        )
-    })
-
     return (
         <AccordionMain>
             <AccordionContainer>
-                {ItemPropos}
+                {AccordionText.map(({title, text}) => {
+                    return (<Collapse title={title} width="100">
+                        {text}
+                    </Collapse>
+                    )})}
             </AccordionContainer>
         </AccordionMain>
 

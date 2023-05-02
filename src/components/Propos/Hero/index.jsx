@@ -1,6 +1,5 @@
-import propoHero from '../../../assets/propo-hero.jpg'
+import propoHero from '../../../assets/hero-about.jpg'
 import styled from "styled-components";
-
 
 export const HeroContainer = styled.section`
   position: relative;

@@ -1,9 +1,7 @@
 import 'styled-components'
 import styled from "styled-components";
 import logo from '../assets/logo.svg'
-// import * as PropTypes from "prop-types";
-import {Link,useLocation, NavLink} from 'react-router-dom'
-import {useEffect, useState} from "react";
+import {Link, NavLink} from 'react-router-dom'
 
 const Header = styled.header`
   display: flex;

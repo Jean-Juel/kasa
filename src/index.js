@@ -1,19 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './index.css';
 import ReactDOM from "react-dom/client";
-import {Outlet, useLocation, useParams, useRouteError} from "react-router-dom"
+import {Outlet, useRouteError} from "react-router-dom"
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
 
 import Root from './Routes/Root'
-import Propos from './Routes/Propos'
+import Propos from './Routes/About'
 import Error from './Routes/Error'
 import Header from '../src/layouts/Header'
 import Footer from '../src/layouts/Footer'
 import {cardData} from "./utils/api";
-import Fiche from "./Routes/Fiche";
+import Fiche from "./Routes/Product";
 
 function Layout() {
     return (

@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import {useLocation, useParams, useSearchParams} from "react-router-dom";
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
-import {cardData} from "../../../utils/api";
 import {useState} from "react";
 
 const FicheHeroContainer = styled.section`
@@ -82,12 +80,8 @@ export default function FicheHero({fiche}) {
     function nextSlide() {
         const isLqstSLide = currentIndex === pictures.length - 1;
         const newIndex = isLqstSLide ? 0 : currentIndex + 1
-        // document.querySelector('.blur').style.opacity = "1"
-        // blur.classList.opacity = '0'
         setCurrentIndex(newIndex)
     }
-
-
     return (
         <FicheHeroContainer>
             <FicheHeroWrapper id="slider">

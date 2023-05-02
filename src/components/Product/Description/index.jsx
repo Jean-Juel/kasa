@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {FaStar,FaRegStar} from 'react-icons/fa'
-import {useState} from "react";
 
 const FicheDescriptionContainer = styled.section`
   font-size: 36px;
