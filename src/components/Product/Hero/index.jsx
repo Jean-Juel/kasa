@@ -30,6 +30,12 @@ const FicheHeroBanner = styled.img`
   flex-shrink: 0;
   border-radius: 25px;
 `
+const FichePageNumber = styled.div`
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  color: white;
+`
 const FicheArrowBannerLeft = styled(FaAngleLeft)`
   font-size: 60px;
   position: absolute;
@@ -69,6 +75,7 @@ export default function FicheHero({fiche}) {
     let blur =  document.querySelector('.blur')
 
     const pictures = fiche.pictures
+    console.log(pictures)
 
     function prevSlide() {
         const isFirstSLide = currentIndex === 0;
@@ -85,10 +92,15 @@ export default function FicheHero({fiche}) {
     return (
         <FicheHeroContainer>
             <FicheHeroWrapper id="slider">
-                <FicheArrowBannerLeft onClick={prevSlide}/>
+                {pictures.length !== 1 ? <FicheArrowBannerLeft onClick={prevSlide}/> : null}
                 <FicheHeroBanner src={fiche.pictures[currentIndex]} alt={fiche.title}/>
                 <HeroBlur className={"blur"}/>
-                <FicheArrowBannerRight onClick={nextSlide}/>
+                {pictures.length !== 1 ? <FicheArrowBannerRight onClick={nextSlide}/>: null}
+                {pictures.length !== 1 ? (
+                    <FichePageNumber>
+                        {currentIndex + 1}/{pictures.length}
+                    </FichePageNumber>
+                ) : null}
             </FicheHeroWrapper>
         </FicheHeroContainer>
     )

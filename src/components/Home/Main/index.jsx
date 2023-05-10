@@ -49,16 +49,16 @@ const TextCard = styled.span`
   z-index: 20;
   font-weight: 500;
 `
-const FilterCard = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-red);
-  opacity: .3;
-  z-index: 2;
-`
+// const FilterCard = styled.div`
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: var(--color-red);
+//   opacity: .3;
+//   z-index: 2;
+// `
 
 
 export default function MainContentHome() {
@@ -67,11 +67,11 @@ export default function MainContentHome() {
             <MainContentWrapper>
                 {cardData?.map((card, index) => {
                     return (
-                        <CardContainer key={`${index}`}>
+                        <CardContainer key={index}>
                             <CardLink to={`/fiche/${card.id}`}>
                             <ImgCard src={card.cover} alt={card.title}/>
                             <TextCard>{card.title}</TextCard>
-                            <FilterCard/>
+                            {/*<FilterCard/>*/}
                             </CardLink>
                         </CardContainer>
                     )

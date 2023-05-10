@@ -5,16 +5,16 @@ import {useEffect, useState} from "react";
 import FicheDescription from "../../components/Product/Description";
 import {cardData} from "../../utils/api";
 import FicheCollapse from "../../components/Product/Collapse";
+import Error from '../Error'
 
 export default function Fiche() {
     const [params, setParams] = useState('')
-
     const location = useLocation().pathname
     let ficheId = location.slice(7)
 
     useEffect(() => {
         setParams(ficheId)
-    }, [ficheId])
+    }, [location])
 
     for (let fiche of cardData) {
         if (ficheId === fiche.id) {
@@ -28,8 +28,12 @@ export default function Fiche() {
                 </>
             )
         } else {
-            console.log('err')
+            return (
+                <>
+                    <Error/>
+                </>
+            )
         }
-    }
 
+    }
 }

@@ -16,12 +16,9 @@ const ErrorWrapper = styled.section`
   flex-direction: column;
 `
 const ErrorTitle = styled.h2`
-  font-size: calc(4vw + 4vh + 2vmin); 
+  font-size: calc(4vw + 4vh + 2vmin);
   margin: 30px 0;
   padding: 0 20px;
-  @media (max-width: var(--lg-screen) {
-    
-  })
 `
 const ErrorText = styled.p`
   font-size: 36px;
@@ -31,17 +28,17 @@ const ErrorText = styled.p`
 const ErrorLink = styled(Link)`
   font-size: 18px;
   padding: 0 20px;
+  text-decoration: underline var(--color-red);
 `
 export default function Error() {
     return (
         <>
-            <Header/>
+            {/*<Header/>*/}
             <ErrorContainer>
                 <ErrorWrapper>
-
-                <ErrorTitle>404</ErrorTitle>
-                <ErrorText>Oups! La page que vous demandez n'existe pas.</ErrorText>
-                <ErrorLink to="/">Revenir à la page d'accueil</ErrorLink>
+                    <ErrorTitle>404</ErrorTitle>
+                    <ErrorText>Oups! La page que vous demandez n'existe pas.</ErrorText>
+                    <ErrorLink to="/">Revenir à la page d'accueil</ErrorLink>
                 </ErrorWrapper>
             </ErrorContainer>
         </>

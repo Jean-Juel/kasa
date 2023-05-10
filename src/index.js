@@ -15,7 +15,7 @@ import Footer from '../src/layouts/Footer'
 import {cardData} from "./utils/api";
 import Fiche from "./Routes/Product";
 
-function Layout() {
+export default function Layout() {
     return (
         <>
             <Header />
