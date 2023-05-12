@@ -7,12 +7,12 @@ import {
     CollapseTextHide, CollapseTitle, CollapseTitleContainer
 } from "./Product/Collapse";
 
-export default function Collapse({title, children, width}) {
+export default function Collapse({title, children, width, padding}) {
     const [active, setActive] =useState(false)
     return(
         <CollapseContainerContent style={{width: width}}>
             <CollapseContent onClick={()=> setActive(!active)}>
-                <CollapseTitleContainer>
+                <CollapseTitleContainer style={{paddingBottom: padding, paddingTop: padding}}>
                     <CollapseTitle>{title}</CollapseTitle>
                     {active ? (<CollapseArrowDown/>) : (<CollapseArrowUp/>)}
                 </CollapseTitleContainer>

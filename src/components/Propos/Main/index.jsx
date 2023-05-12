@@ -42,10 +42,12 @@ export default function Accordion() {
         <AccordionMain>
             <AccordionContainer>
                 {AccordionText.map(({title, text}) => {
-                    return (<Collapse title={title} width="100">
-                        {text}
-                    </Collapse>
-                    )})}
+                    return (
+                        <Collapse title={title} width="100" padding="0">
+                            {text}
+                        </Collapse>
+                    )
+                })}
             </AccordionContainer>
         </AccordionMain>
 
